@@ -18,14 +18,23 @@ Java_com_example_jni_CTransferJava_transferJavaFunOutside(JNIEnv *jniEnv, jobjec
 
     jmethodID jmethodId = jniEnv->GetMethodID(clazz, "callFun", "()V");
 
-    // NewObject() 新建一个对象并且调用构造函数 和AllocObject() 仅仅是调用构造函数
+    // NewObject() 新建一个对象并且调用构造函数 和AllocObject() 仅仅是新建对象(即分配内存空间)
     // jobject clazzobj = jniEnv->AllocObject(clazz);
+    // 见：同名方法_1
 
-    // javap 
     jmethodID init = jniEnv->GetMethodID(clazz, "<init>", "(I)V");
 
-    jobject clazzobj = jniEnv->NewObject(clazz, init,1);
+    jobject clazzobj = jniEnv->NewObject(clazz, init, 1);
 
+    jniEnv->CallVoidMethod(clazzobj, jmethodId);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_example_jni_CTransferJava_transferJavaFunOutside_11(JNIEnv *jniEnv, jobject) {
+    jclass clazz = jniEnv->FindClass("com/example/jni/CTransferJavaOutside");
+
+    jmethodID jmethodId = jniEnv->GetMethodID(clazz, "callFun", "()V");
+    jobject clazzobj = jniEnv->AllocObject(clazz);
     jniEnv->CallVoidMethod(clazzobj, jmethodId);
 }
 

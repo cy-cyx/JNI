@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
         cTransferJava.transferJavaFun();
         cTransferJava.transferJavaStatic();
         cTransferJava.transferJavaFunOutside();
+        cTransferJava.transferJavaFunOutside_1();
     }
 }

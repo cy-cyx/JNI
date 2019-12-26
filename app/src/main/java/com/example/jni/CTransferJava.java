@@ -18,6 +18,8 @@ public class CTransferJava {
 
     public native void transferJavaFunOutside();
 
+    public native void transferJavaFunOutside_1();
+
     public native void transferJavaStatic();
 
     public static void callStaticFun() {

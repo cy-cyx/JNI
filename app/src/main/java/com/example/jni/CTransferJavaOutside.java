@@ -10,7 +10,7 @@ import android.util.Log;
  */
 public class CTransferJavaOutside {
 
-    int a;
+    int a = 1;
 
     public CTransferJavaOutside(int a) {
         this.a = a;

@@ -39,6 +39,14 @@ JNIEXPORT void JNICALL Java_com_example_jni_CTransferJava_transferJavaFunOutside
 JNIEXPORT void JNICALL Java_com_example_jni_CTransferJava_transferJavaStatic
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_example_jni_CTransferJava
+ * Method:    staticTransferJavaFun
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_example_jni_CTransferJava_staticTransferJavaFun
+  (JNIEnv *, jclass);
+
 #ifdef __cplusplus
 }
 #endif

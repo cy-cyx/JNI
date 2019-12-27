@@ -22,6 +22,8 @@ public class CTransferJava {
 
     public native void transferJavaStatic();
 
+    public native static void staticTransferJavaFun();
+
     public static void callStaticFun() {
         Log.d("xx", "staticFun: 调用静态方法");
     }

@@ -24,7 +24,7 @@ Java_com_example_jni_CTransferJava_transferJavaFunOutside(JNIEnv *jniEnv, jobjec
 
     jmethodID init = jniEnv->GetMethodID(clazz, "<init>", "(I)V");
 
-    jobject clazzobj = jniEnv->NewObject(clazz, init, 1);
+    jobject clazzobj = jniEnv->NewObject(clazz, init, 2);
 
     jniEnv->CallVoidMethod(clazzobj, jmethodId);
 }
@@ -45,4 +45,11 @@ Java_com_example_jni_CTransferJava_transferJavaStatic(JNIEnv *jniEnv, jobject) {
     // 找静态方法
     jmethodID jmethodId = jniEnv->GetStaticMethodID(clazz, "callStaticFun", "()V");
     jniEnv->CallStaticVoidMethod(clazz, jmethodId);
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_example_jni_CTransferJava_staticTransferJavaFun(JNIEnv *jniEnv, jclass clazz) {
+    jmethodID jmethodId = jniEnv->GetMethodID(clazz, "callFun", "()V");
+    jobject clazzobj = jniEnv->AllocObject(clazz);
+    jniEnv->CallVoidMethod(clazzobj, jmethodId);
 }

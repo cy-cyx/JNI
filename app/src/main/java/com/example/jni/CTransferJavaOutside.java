@@ -10,7 +10,7 @@ import android.util.Log;
  */
 public class CTransferJavaOutside {
 
-    int a = 1;
+    int a = 1; // 用于验证是否有初始化对象
 
     public CTransferJavaOutside(int a) {
         this.a = a;

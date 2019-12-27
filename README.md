@@ -6,6 +6,8 @@
 
 javah -classpath <路径> -d <输出路径> 类
 
+例如：javah -classpath F:\JNI\app\build\intermediates\javac\debug\compileDebugJavaWithJavac\classes -d F:\JNI\app\src\main\cpp com.example.jni.CTransferJava
+
 注意：
 
 （1）class的路径，只需到包名之前 
@@ -13,6 +15,14 @@ javah -classpath <路径> -d <输出路径> 类
 （2）类，需要是.class文件 而不是.java文件 包名.类名
 
 **2、从头文件就可以确定方法名**
+
+注意：
+
+（1）java方法转成C方法存在一定规则变化 例如：1 会变成 11
+
+（2）使用extend"C"的作用，因为C++由于重载，编译后方法名会将参数一起进去，
+
+加上extend"C",声明该方法名用C编辑，以保证在java代码去可以正确找到对应的方法名
 
 **3、newObject 和 AllocObject 区别**
 
@@ -22,7 +32,9 @@ newObject有对变量进行初始化，并调用指定的构造方法
 
 (2)方法签名的获取 使用命令 Javap 
 
-(3)GetMethodID 获取构造函数 使用<init>代替 
+例如：javap -classpath F:\JNI\app\build\intermediates\javac\debug\compileDebugJavaWithJavac\classes -s com.example.jni.CTransferJava
+
+(3)GetMethodID 获取构造函数 使用\<init\>代替 
 
 **4、使用CMake要注意版本号 externalNativeBuild{}**
 

@@ -17,6 +17,22 @@ JNIEXPORT void JNICALL Java_com_example_jni_CTransferJava_transferJavaFun
 
 /*
  * Class:     com_example_jni_CTransferJava
+ * Method:    transferJavaFunReturnInt
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_com_example_jni_CTransferJava_transferJavaFunReturnInt
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_jni_CTransferJava
+ * Method:    transferJavaFunReturnObject
+ * Signature: ()Lcom/example/jni/CTransferTextClass;
+ */
+JNIEXPORT jobject JNICALL Java_com_example_jni_CTransferJava_transferJavaFunReturnObject
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_jni_CTransferJava
  * Method:    transferJavaFunOutside
  * Signature: ()V
  */

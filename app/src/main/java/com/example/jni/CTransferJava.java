@@ -16,6 +16,10 @@ public class CTransferJava {
 
     public native void transferJavaFun();
 
+    public native int transferJavaFunReturnInt();
+
+    public native CTransferTextClass transferJavaFunReturnObject();
+
     public native void transferJavaFunOutside();
 
     public native void transferJavaFunOutside_1();
@@ -26,6 +30,14 @@ public class CTransferJava {
 
     public static void callStaticFun() {
         Log.d("xx", "staticFun: 调用静态方法");
+    }
+
+    public int callFunReturnInt() {
+        return 2020;
+    }
+
+    public CTransferTextClass callFunReturnObject() {
+        return new CTransferTextClass();
     }
 
     public void callFun() {

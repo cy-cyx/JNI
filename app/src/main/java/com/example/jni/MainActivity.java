@@ -21,6 +21,19 @@ public class MainActivity extends AppCompatActivity {
          *非静态native方法调用本对象中的方法
          */
         cTransferJava.transferJavaFun();
+
+        /*
+         *有返回值的情况
+         */
+        int i = cTransferJava.transferJavaFunReturnInt();
+        Log.d("xx", "onCreate: 测试有返回值" + i);
+
+        /*
+         *返回值为类
+         */
+        CTransferTextClass cTransferTextClass = cTransferJava.transferJavaFunReturnObject();
+        Log.d("xx", "onCreate: 测试有返回值，且为类" + cTransferTextClass.getString());
+
         /*
          *非静态native方法调用本对象中的静态方法
          */

@@ -12,6 +12,31 @@ Java_com_example_jni_CTransferJava_transferJavaFun(JNIEnv *jniEnv, jobject objec
     jniEnv->CallVoidMethod(object, jmethodId);
 }
 
+extern "C" JNIEXPORT jint JNICALL
+Java_com_example_jni_CTransferJava_transferJavaFunReturnInt(JNIEnv *jniEnv, jobject object) {
+    //注意：方法路劲要用 ”/“ 不能使用 ”.“
+    jclass clazz = jniEnv->FindClass("com/example/jni/CTransferJava");
+
+    // 第二个参数：方法名
+    // 第三个参数：方法签名
+    jmethodID jmethodId = jniEnv->GetMethodID(clazz, "callFunReturnInt", "()I");
+    // 使用有返回值的java方法
+    return jniEnv->CallIntMethod(object, jmethodId);
+}
+
+extern "C" JNIEXPORT jobject JNICALL
+Java_com_example_jni_CTransferJava_transferJavaFunReturnObject(JNIEnv *jniEnv, jobject object) {
+    //注意：方法路劲要用 ”/“ 不能使用 ”.“
+    jclass clazz = jniEnv->FindClass("com/example/jni/CTransferJava");
+
+    // 第二个参数：方法名
+    // 第三个参数：方法签名
+    jmethodID jmethodId = jniEnv->GetMethodID(clazz, "callFunReturnObject",
+                                              "()Lcom/example/jni/CTransferTextClass");
+    // 使用有返回值的java方法
+    return jniEnv->CallObjectMethod(object, jmethodId);
+}
+
 extern "C" JNIEXPORT void JNICALL
 Java_com_example_jni_CTransferJava_transferJavaFunOutside(JNIEnv *jniEnv, jobject object) {
     jclass clazz = jniEnv->FindClass("com/example/jni/CTransferJavaOutside");

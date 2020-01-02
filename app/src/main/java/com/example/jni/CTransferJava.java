@@ -32,10 +32,16 @@ public class CTransferJava {
         Log.d("xx", "staticFun: 调用静态方法");
     }
 
+    /**
+     * 用于测试返回值为基础类型的情况
+     */
     public int callFunReturnInt() {
         return 2020;
     }
 
+    /**
+     * 用于测试返回为类的情况
+     */
     public CTransferTextClass callFunReturnObject() {
         return new CTransferTextClass();
     }

@@ -43,4 +43,18 @@ newObject有对变量进行初始化，并调用指定的构造方法
 
 TextCMake.cpp包含了最简单的Cmake例子
 
-CTransferJava.cpp包含了C调Java的方法
+CTransferJava.cpp包含了C调Java的方法（包含几种情况）
+
+（1）非静态native方法调用本对象中的方法
+
+（2）调用java有基础类型返回值的情况
+
+（3）调用java有类对象返回值的情况
+
+（4）非静态native方法调用本对象中的静态方法
+
+（5）非静态native方法调非本对象内的方法 使用NewObject构造
+
+（6）非静态native方法调非本对象内的方法 使用AllocObject构造（区别就是否有初始化）
+
+（7）静态native方法调本对象内方法（跟调非对象内的方法一样，都需要在底层构造出相应的对象）

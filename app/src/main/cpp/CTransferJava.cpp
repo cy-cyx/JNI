@@ -32,7 +32,7 @@ Java_com_example_jni_CTransferJava_transferJavaFunReturnObject(JNIEnv *jniEnv, j
     // 第二个参数：方法名
     // 第三个参数：方法签名
     jmethodID jmethodId = jniEnv->GetMethodID(clazz, "callFunReturnObject",
-                                              "()Lcom/example/jni/CTransferTextClass");
+                                              "()Lcom/example/jni/CTransferTextClass;");
     // 使用有返回值的java方法
     return jniEnv->CallObjectMethod(object, jmethodId);
 }

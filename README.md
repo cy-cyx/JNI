@@ -58,3 +58,13 @@ CTransferJava.cpp包含了C调Java的方法（包含几种情况）
 （6）非静态native方法调非本对象内的方法 使用AllocObject构造（区别就是否有初始化）
 
 （7）静态native方法调本对象内方法（跟调非对象内的方法一样，都需要在底层构造出相应的对象）
+
+**动态注册和静态注册**
+
+调用System.loadLibrary 会回调JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved)
+
+在其中使用env->RegisterNatives进行注册
+
+与静态注册区别：不需要生成头文件，方法名不用一一对应
+
+注意：JNI_OnLoad方法只会调用一次，System.loadLibrary多次调用不影响

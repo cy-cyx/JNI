@@ -52,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
          */
         Log.d("xx", "onCreate: 静态native方法调用java方法");
         CTransferJava.staticTransferJavaFun();
+
+        // 动态注册
+        DynamicRegistered dynamicRegistered = new DynamicRegistered();
+        dynamicRegistered.init();
+        Log.d("xx", "动态注册: " + dynamicRegistered.getNumber());
     }
 }

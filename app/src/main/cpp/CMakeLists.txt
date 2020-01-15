@@ -5,3 +5,6 @@ target_link_libraries(TextCMake)
 
 add_library(CTransferJava SHARED CTransferJava.cpp)
 target_link_libraries(CTransferJava)
+
+add_library(DynamicRegistered SHARED DynamicRegistered.cpp)
+target_link_libraries(DynamicRegistered)
